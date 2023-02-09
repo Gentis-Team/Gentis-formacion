@@ -12,11 +12,12 @@ class Location extends Model
     public function location(){
         return $this->belongsTo(Location::class, 'id_courses');
 
-
         //to get all course locations
-        $location = Location::firts();
+        $location = Location::find();
         $location->courses;
+
         //building a query
-        $location->courses()->where('is_admin', true)->get();
+        // $courses = Courses::where('title', true)->get();
+        // $location = Courses::whereBelongsTo($courses)->get();    
     }
 }
