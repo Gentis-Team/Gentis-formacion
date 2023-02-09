@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('mail');
             $table->string('expiration_date');
             $table->string('schedules');
+            $table->string('modality');
             $table->longText('description');
             $table->timestamps();
         });

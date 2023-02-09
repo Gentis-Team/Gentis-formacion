@@ -81,7 +81,7 @@ class CollectiveController extends Controller
     {
         if(is_null($collective)){
             
-            return response()->json('No sha pogut realitzar la petició, larxiu ja no existeix.', 404);
+            return response()->json('No s\'ha pogut realitzar la petició, l\'arxiu ja no existeix..', 404);
         }
         
         $collective->delete();
