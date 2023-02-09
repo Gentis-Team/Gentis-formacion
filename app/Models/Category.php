@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    public function requirements()
+    public function courses()
     {
         return $this->belongsToMany(Course::class, 'courses_categories', 'category_id','course_id');    
     }

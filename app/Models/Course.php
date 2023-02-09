@@ -31,6 +31,11 @@ class Course extends Model
         return $this->belongsToMany(Email::class, 'courses_emails', 'course_id','email_id');    
     }
 
+    public function collectives()
+    {
+        return $this->belongsToMany(Collective::class, 'courses_collectives', 'course_id','collective_id');    
+    }
+
     public function fetchFromDB($title)
     {
         $start_time = now();

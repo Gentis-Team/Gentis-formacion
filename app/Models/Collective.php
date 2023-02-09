@@ -11,6 +11,6 @@ class Collective extends Model
     
     public function courses()
     {
-        return $this->belongsToMany(Courses::class, 'courses_collective', 'courses_id','collective_id');    
+        return $this->belongsToMany(Course::class, 'courses_collectives', 'course_id','collective_id');    
     }
 }

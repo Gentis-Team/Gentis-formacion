@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('courses_collective', function (Blueprint $table) {
+        Schema::create('courses_collectives', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBiginteger('courses_id')->unsigned();
+            $table->unsignedBiginteger('course_id')->unsigned();
             $table->unsignedBiginteger('collective_id')->unsigned();
             
-            $table->foreign('courses_id')->references('id')
+            $table->foreign('course_id')->references('id')
             ->on('courses')->onDelete('cascade');
             $table->foreign('collective_id')->references('id')
-            ->on('collective')->onDelete('cascade');
+            ->on('collectives')->onDelete('cascade');
         });
     }
 
