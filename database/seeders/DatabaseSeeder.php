@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Categories;
+use App\Models\Collective;
 use App\Models\Courses;
 use App\Models\Location;
 use App\Models\Requirements;
@@ -106,6 +107,26 @@ class DatabaseSeeder extends Seeder
         Categories::factory()->create([
             'name' => '
             - Magatzem',
+        ]);
+
+        Collective::factory()->create([
+            'name' => 'Para discapacitados',
+        ]);
+
+        Collective::factory()->create([
+            'name' => 'Para mujeres',
+        ]);
+
+        Collective::factory()->create([
+            'name' => 'Para mayores de 55 años',
+        ]);
+
+        Collective::factory()->create([
+            'name' => 'Para inmigrantes',
+        ]);
+
+        Collective::factory()->create([
+            'name' => 'Para jóvenes',
         ]);
 
         Courses::factory()->create([
