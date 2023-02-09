@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Courses extends Model
+class Category extends Model
 {
     use HasFactory;
 
     public function requirements()
     {
-        return $this->belongsToMany(Requirements::class, 'courses_requirements', 'courses_id','requirements_id');    
+        return $this->belongsToMany(Course::class, 'courses_categories', 'category_id','course_id');    
     }
 }

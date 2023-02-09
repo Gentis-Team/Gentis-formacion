@@ -17,14 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('image');
-            $table->string('duration');
-            $table->string('location');
-            $table->string('phone');
-            $table->string('mail');
-            $table->string('expiration_date');
-            $table->string('schedules');
+            $table->integer('duration_theory');
+            $table->integer('duration_practice');
+            $table->date('start_date');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->text('description');
             $table->string('modality');
-            $table->longText('description');
             $table->timestamps();
         });
     }
