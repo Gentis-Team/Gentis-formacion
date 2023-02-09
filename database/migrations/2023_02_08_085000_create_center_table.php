@@ -13,13 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('phones', function (Blueprint $table) {
+        Schema::create('centers', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('address');
             $table->string('phone');
-            $table->unsignedBiginteger('user_id')->nullable();
+            $table->string('email');
+            $table->string('website');
+            $table->string('opening_hours');
+            $table->string('closing_hours');
+            $table->unsignedBiginteger('location_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')
+            $table->foreign('location_id')->references('id')->on('locations')
             ->onDelete('cascade');
         });
     }
@@ -31,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('phones');
+        Schema::dropIfExists('center');
     }
 };

@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Course>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Email>
  */
-class CourseFactory extends Factory
+class EmailFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class CourseFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'Curs de Formació en el Treball',
+            //
         ];
     }
 }
