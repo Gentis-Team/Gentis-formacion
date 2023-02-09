@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('code');
+            $table->string('name');
             $table->string('image');
             $table->integer('duration_theory');
             $table->integer('duration_practice');
@@ -24,7 +25,11 @@ return new class extends Migration
             $table->time('end_time');
             $table->text('description');
             $table->string('modality');
+            $table->unsignedBiginteger('center_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('center_id')->references('id')->on('centers')
+            ->onDelete('cascade');
         });
     }
 

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('requirements', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('graduate');
+            $table->string('name');
+            $table->string('description');
             $table->timestamps();
         });
     }

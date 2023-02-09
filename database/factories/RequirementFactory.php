@@ -17,8 +17,8 @@ class RequirementFactory extends Factory
     public function definition()
     {
         return [
-            'title' => 'E.S.O',
-            'graduate' => 'Títol de graduat en Educació Secundària Obligatòria o estudis declarats equivalents a efectes acadèmics.',
+            'name' => 'E.S.O',
+            'description' => 'Títol de graduat en Educació Secundària Obligatòria o estudis declarats equivalents a efectes acadèmics.',
         ];
     }
 }

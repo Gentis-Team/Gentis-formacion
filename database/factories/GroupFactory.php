@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Collective>
  */
-class CollectiveFactory extends Factory
+class GroupFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class CollectiveFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'Para discapacitados',
+            'name' => 'Dones',
         ];
     }
 }

@@ -21,6 +21,11 @@ class Course extends Model
         return $this->belongsToMany(Category::class, 'courses_categories', 'course_id','category_id');    
     }
 
+    public function groups()
+    {
+        return $this->belongsToMany(Group::class, 'courses_groups', 'course_id','group_id');    
+    }
+
     public function phones()
     {
         return $this->belongsToMany(Phone::class, 'courses_phones', 'course_id','phone_id');    
@@ -30,10 +35,10 @@ class Course extends Model
     {
         return $this->belongsToMany(Email::class, 'courses_emails', 'course_id','email_id');    
     }
-
-    public function collectives()
+    
+    public function centre()
     {
-        return $this->belongsToMany(Collective::class, 'courses_collectives', 'course_id','collective_id');    
+        return $this->belongsTo(Centre::class);
     }
 
     public function fetchFromDB($title)
