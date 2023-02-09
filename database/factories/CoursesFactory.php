@@ -25,6 +25,7 @@ class CoursesFactory extends Factory
             'mail' => 'email@email.com',
             'expiration_date' => '2023-12-31',
             'schedules' => '00:00 a 00:00',
+            'modality' => 'presencial',
             'description' => 'description',
         ];
     }

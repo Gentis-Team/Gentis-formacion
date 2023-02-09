@@ -36,6 +36,7 @@ class CoursesController extends Controller
             'mail' => 'required',
             'expiration_date' => 'required',
             'schedules' => 'required',
+            'modality' => 'required',
             'description' => 'required',
         ]);
 
@@ -46,6 +47,7 @@ class CoursesController extends Controller
         $courses->mail = $request->mail;
         $courses->expiration_date = $request->expiration_date;
         $courses->schedules = $request->schedules;
+        $courses->modality = $request->modality;
         $courses->description = $request->description;
         
         $courses->save();
@@ -81,6 +83,7 @@ class CoursesController extends Controller
             'mail' => 'required',
             'expiration_date' => 'required',
             'schedules' => 'required',
+            'modality' => 'required',
             'description' => 'required',
         ]);
 
@@ -91,6 +94,7 @@ class CoursesController extends Controller
         $courses->mail = $request->mail;
         $courses->expiration_date = $request->expiration_date;
         $courses->schedules = $request->schedules;
+        $courses->modality = $request->modality;
         $courses->description = $request->description;
         
         $courses->update();
@@ -108,7 +112,7 @@ class CoursesController extends Controller
     {
         if(is_null($courses)){
             
-            return response()->json('No sha pogut realitzar la petició, larxiu ja no existeix.', 404);
+            return response()->json('No s\'ha pogut realitzar la petició, l\'arxiu ja no existeix.', 404);
         }
 
         $courses->delete();

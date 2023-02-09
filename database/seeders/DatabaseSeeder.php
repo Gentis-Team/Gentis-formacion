@@ -138,6 +138,7 @@ class DatabaseSeeder extends Seeder
             'mail' => 'Correu: madelgado@gentis.org.',
             'expiration_date' => 'Dates: Inici el 20 de desembre de 2022.',
             'schedules' =>  'Horari: matins de 9:00h a 15:00h.',
+            'modality' => 'Semi-presencial',
             'description' => 'Realitzar operacions d’enregistrament de dades, així com transcriure, reproduir i arxivar la informació i documentació requerides en les tasques administratives i de gestió, d’acord amb instruccions, normativa i procediments establerts, de forma coordinada i amb criteris de qualitat, productivitat, seguretat i respecte del medi ambient.',
         ]);
 
@@ -150,6 +151,7 @@ class DatabaseSeeder extends Seeder
             'mail' => 'Correu: emegino@gentis.org o scontreras@gentis.org',
             'expiration_date' => 'Dates: 13 de gener de 2023.',
             'schedules' => 'Horari: matins de 09:00h a 15:00h',
+            'modality' => 'Online',
             'description' => 'Realitzar la gestió administrativa de les activitats vinculades a l’administració de recursos humans i de la informació derivada en el marc d’una organització, d’acorde amb els objectius marcats, les normes internes establertes i la legislació vigent.',
         ]);
 
@@ -162,6 +164,7 @@ class DatabaseSeeder extends Seeder
             'mail' => 'Correu: (cpaga@gentis.org)',
             'expiration_date' => 'Dates: inici 2 de gener 2023',
             'schedules' => 'Horari: tardes de 15:30h a 20:30h',
+            'modality' => 'Presencial',
             'description' => 'Muntar, mantenir i reparar les instal·lacions elèctriques per baixa tensió compreses en l’àmbit del Reglament Electrònic per baixa tensió, aplicant les tècniques i els procediments requerits en cada cas, aconseguint els criteris de qualitat, en condicions de seguretat i complint la normativa vigent',
         ]);
 
@@ -174,6 +177,7 @@ class DatabaseSeeder extends Seeder
             'mail' => 'Correu: emegino@gentis.org',
             'expiration_date' => 'Dates: Inici 4 de setembre de 2023.',
             'schedules' => 'Horari: matins de 09:00h a 15:00h',
+            'modality' => 'Presencial',
             'description' => 'Organitzar i controlar les operacions i els fluxos de mercaderies del magatzem d’acord amb els procediments establerts i la normativa vigent, i assegurar la qualitat i l’optimització de la xarxa de magatzems o de la cadena logística.',
         ]);
 
@@ -186,6 +190,7 @@ class DatabaseSeeder extends Seeder
             'mail' => 'Correu: ngas@gentis.org',
             'expiration_date' => 'Dates: Inici 23 de gener.',
             'schedules' => 'Horari: matins de 09:00h a 15:00h',
+            'modality' => 'Presencial',
             'description' => 'El curs et permetrà assistir al servei i preparar i presentar begudes senzilles i menjars ràpids, executant i aplicant operacions, tècniques i normes bàsiques de manipulació, preparació i conservació d’aliments i begudes.',
         ]);
     }

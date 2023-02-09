@@ -86,7 +86,7 @@ class RequirementsController extends Controller
     {
         if(is_null($requirements)){
             
-            return response()->json('No se pudo realizar la petición, el archivo ya no existe', 404);
+            return response()->json('No s\'ha pogut realitzar la petició, l\'arxiu ja no existeix.', 404);
         }
 
         $requirements->delete();
