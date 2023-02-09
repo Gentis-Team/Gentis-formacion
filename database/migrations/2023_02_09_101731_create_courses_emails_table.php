@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('courses_requirements', function (Blueprint $table) {
+        Schema::create('courses_emails', function (Blueprint $table) {
             $table->id();
             $table->unsignedBiginteger('course_id')->unsigned();
-            $table->unsignedBiginteger('requirement_id')->unsigned();
+            $table->unsignedBiginteger('email_id')->unsigned();
             
             $table->foreign('course_id')->references('id')
             ->on('courses')->onDelete('cascade');
-            $table->foreign('requirement_id')->references('id')
-            ->on('requirements')->onDelete('cascade');
+            $table->foreign('email_id')->references('id')
+            ->on('emails')->onDelete('cascade');
         });
     }
 
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses_requirements');
+        Schema::dropIfExists('courses_emails');
     }
 };
