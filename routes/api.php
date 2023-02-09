@@ -3,9 +3,11 @@
 use App\Http\Controllers\CategoriesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\CourseController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\RequirementsController;
+
 
 /*
 |--------------------------------------------------------------------------
