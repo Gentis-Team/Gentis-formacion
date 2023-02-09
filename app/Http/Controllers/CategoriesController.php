@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
+use App\Models\Categories;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CourseController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return Course::all();
+        return Categories::all();
     }
 
     /**
@@ -25,67 +26,67 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        $course = new Course();
+        $categories = new Categories();
 
         $request->validate([
-            'title' => 'required',
+            'name' => 'required',
         ]);
 
-        $course->title = $request->course;
-        
-        $course->save();
+        $categories->name = $request->name;
 
-        return $course;
+        $categories->save();
+
+        return $categories;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Persona  $persona
+     * @param  \App\Models\Categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show(Categories $categories)
     {
-        return $course;
+        return $categories;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $persona
+     * @param  \App\Models\Categories  $categories
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, Categories $categories)
     {
         $request->validate([
-            'title' => 'required',
+            'name' => 'required',
         ]);
 
-        $course->title = $request->course;
-        
-        $course->update();
+        $categories->name = $request->name;
 
-        return $course;
+        $categories->update();
+        
+        return $categories;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Persona  $persona
-     * @return \Illuminate\Http\Course
+     * @param  \App\Models\Categories  $categories
+     * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy(Categories $categories)
     {
-
-        if(is_null($course)){
+        if(is_null($categories)){
             
             return response()->json('No se pudo realizar la petición, el archivo ya no existe', 404);
         }
 
-        $course->delete();
+        $categories->delete();
 
 
         return response()->noContent();
+        
     }
 }

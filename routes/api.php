@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\RequirementsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('courses', CourseController::class );
+Route::apiResource('courses', CoursesController::class );
+
+Route::apiResource('requirements', RequirementsController::class );
+
+Route::apiResource('categories', CategoriesController::class );
+
+Route::apiResource('location', LocationController::class );
