@@ -25,6 +25,7 @@ return new class extends Migration
             $table->time('end_time');
             $table->text('description');
             $table->string('modality');
+            $table->string('fitxa_curs');
             $table->unsignedBiginteger('center_id')->nullable();
             $table->timestamps();
 

@@ -40,6 +40,11 @@ class Course extends Model
     {
         return $this->belongsTo(Centre::class);
     }
+    
+    public function students()
+    {
+        return $this->belongsTo(Student::class, 'courses_students', 'student_id', 'course_id');
+    }
 
     public function fetchFromDB($title)
     {
