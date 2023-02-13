@@ -38,7 +38,7 @@ class Course extends Model
     
     public function students()
     {
-        return $this->belongsTo(Student::class, 'courses_students', 'student_id', 'course_id');
+        return $this->belongsTo(Student::class, 'courses_students', 'course_id', 'student_id');
     }
 
     public function fetchFromDB($title)

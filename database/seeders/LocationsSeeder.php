@@ -17,29 +17,29 @@ class LocationsSeeder extends Seeder
     public function run()
     {
         $location = Location::factory()->create([
-            'name' => 'Barcelona',
+            'location' => 'Barcelona',
         ]);
         $center = Center::find(4);
         $location->centers()->save($center);
         
         $location = Location::factory()->create([
-            'name' => 'Amposta',
+            'location' => 'Amposta',
         ]);
         $center = Center::find(1);
         $location->centers()->save($center);
 
         $location = Location::factory()->create([
-            'name' => 'Girona',
+            'location' => 'Girona',
         ]);
 
         $location = Location::factory()->create([
-            'name' => 'Salt',
+            'location' => 'Salt',
         ]);
         $center = Center::find(3);
         $location->centers()->save($center);
         
         $location = Location::factory()->create([
-            'name' => 'Vilassar de Dalt',
+            'location' => 'Vilassar de Dalt',
         ]);
         $center = Center::find(2);
         $location->centers()->save($center);
