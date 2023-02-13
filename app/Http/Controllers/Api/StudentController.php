@@ -28,18 +28,13 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $student = Student::create($request->all());
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Student  $student
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Student $student)
-    {
-        //
+        return response()->json([
+            'status' => true,
+            'message' => "Student Created successfully!",
+            'student' => $student
+        ], 200);
     }
 
     /**
@@ -51,7 +46,13 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        $student->update($request->all());
+
+        return response()->json([
+            'status' => true,
+            'message' => "Student Updated successfully!",
+            'student' => $student
+        ], 200);
     }
 
     /**
@@ -62,6 +63,11 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        $student->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => "Student Deleted successfully!",
+        ], 200);
     }
 }
