@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 class AuthController extends Controller
 {
@@ -29,16 +30,17 @@ class AuthController extends Controller
                 'message' => 'Unauthorized',
             ], 401);
         }
-
+        
         $user = Auth::user();
         return response()->json([
                 'status' => 'success',
                 'user' => $user,
-                'authorisation' => [
+                'authorization' => [
                     'token' => $token,
                     'type' => 'bearer',
                 ]
-            ]);
+            ])->withCookie(cookie('token', $token, 60 * 14))
+                ->withCookie(cookie('logged_in', true, 60, null, null, false, false));
 
     }
 
@@ -48,6 +50,7 @@ class AuthController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'phone' => 'required|string|max:15',
             'password' => 'required|string|min:6',
+            'role' => 'required|string',
         ]);
 
         $user = User::create([
@@ -56,16 +59,13 @@ class AuthController extends Controller
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
         ]);
+        $role = Role::where('name', $request->role)->first();
+        $user->assignRole($role);
 
-        $token = Auth::login($user);
         return response()->json([
             'status' => 'success',
             'message' => 'User created successfully',
             'user' => $user,
-            'authorisation' => [
-                'token' => $token,
-                'type' => 'bearer',
-            ]
         ]);
     }
 
@@ -75,7 +75,7 @@ class AuthController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'Successfully logged out',
-        ]);
+        ])->withCookie(cookie('logged_in', false, 60, null, null, false, false));
     }
 
     public function refresh()
@@ -83,11 +83,12 @@ class AuthController extends Controller
         return response()->json([
             'status' => 'success',
             'user' => Auth::user(),
-            'authorisation' => [
+            'authorization' => [
                 'token' => Auth::refresh(),
                 'type' => 'bearer',
             ]
         ]);
     }
+    
 
 }
