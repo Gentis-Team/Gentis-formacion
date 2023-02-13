@@ -26,19 +26,14 @@ class Course extends Model
         return $this->belongsToMany(Group::class, 'courses_groups', 'course_id','group_id');    
     }
 
-    public function phones()
+    public function users()
     {
-        return $this->belongsToMany(Phone::class, 'courses_phones', 'course_id','phone_id');    
-    }
-
-    public function emails()
-    {
-        return $this->belongsToMany(Email::class, 'courses_emails', 'course_id','email_id');    
+        return $this->belongsToMany(User::class, 'courses_users', 'course_id','user_id');    
     }
     
-    public function centre()
+    public function center()
     {
-        return $this->belongsTo(Centre::class);
+        return $this->belongsTo(Center::class);
     }
 
     public function fetchFromDB($title)
