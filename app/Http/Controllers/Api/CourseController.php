@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['index', 'show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,11 +20,11 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::all();
+        $courses = Course::with(['categories', 'groups', 'requirements', 'center'])->get();
 
         return response()->json([
             'status' => true,
-            'courses' => $courses
+            'courses' => $courses,
         ]);
 
         /* $validatedData = $request->validate([

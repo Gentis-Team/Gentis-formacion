@@ -26,14 +26,6 @@ class CoursesSeeder extends Seeder
             1, 3
         ]);
 
-        $course->phones()->attach([
-            1, 2
-        ]);
-
-        $course->emails()->attach([
-            1, 2
-        ]);
-
         $course = Course::factory()->create([
             'code' => 'AFDDGD0208',
             'name' => 'Gestió integrada de RRHH',
@@ -51,12 +43,6 @@ class CoursesSeeder extends Seeder
         ]);
         $course->requirements()->attach([
             1, 3, 5, 7, 8
-        ]);
-        $course->phones()->attach([
-            2
-        ]);
-        $course->emails()->attach([
-            2
         ]);
         $course->groups()->attach([
             2
@@ -80,12 +66,6 @@ class CoursesSeeder extends Seeder
         $course->requirements()->attach([
             1, 4, 5, 7, 8
         ]);
-        $course->phones()->attach([
-            1
-        ]);
-        $course->emails()->attach([
-            1
-        ]);
         $course->groups()->attach([
             1
         ]);
@@ -108,12 +88,6 @@ class CoursesSeeder extends Seeder
         $course->requirements()->attach([
             1, 3, 5, 7, 8
         ]);
-        $course->phones()->attach([
-            2
-        ]);
-        $course->emails()->attach([
-            2
-        ]);
         $course->groups()->attach([
             2
         ]);
@@ -132,12 +106,6 @@ class CoursesSeeder extends Seeder
         ]);
         $course->categories()->attach([
             2, 5
-        ]);
-        $course->phones()->attach([
-            1
-        ]);
-        $course->emails()->attach([
-            1
         ]);
         $course->groups()->attach([
             3

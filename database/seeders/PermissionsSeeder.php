@@ -6,10 +6,6 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
-use App\Models\Phone;
-use App\Models\Email;
-
-
 class PermissionsSeeder extends Seeder
 {
     /**
@@ -57,48 +53,23 @@ class PermissionsSeeder extends Seeder
         // create demo users
         $user = \App\Models\User::factory()->create([
             'name' => 'Example User',
-        ]);
-        $user->assignRole($role1);
-
-        $phone = Phone::factory()->create([
+            'email' => 'user@example.com',
             'phone' => '123456789',
         ]);
-        $user->phone()->save($phone);
-
-        $email = Email::factory()->create([
-            'email' => 'user@example.com',
-        ]);
-        $user->email()->save($email);
-        
+        $user->assignRole($role1);        
 
         $user = \App\Models\User::factory()->create([
             'name' => 'Example Admin User',
+            'email' => 'admin@example.com',
+            'phone' => '987654321',
         ]);
         $user->assignRole($role2);
 
-        $phone = Phone::factory()->create([
-            'phone' => '987654321',
-        ]);
-        $user->phone()->save($phone);
-
-        $email = Email::factory()->create([
-            'email' => 'admin@example.com',
-        ]);
-        $user->email()->save($email);
-
         $user = \App\Models\User::factory()->create([
             'name' => 'Example Super-Admin User',
-        ]);
-        $user->assignRole($role3);
-
-        $phone = Phone::factory()->create([
+            'email' => 'superadmin@example.com',
             'phone' => '564783921',
         ]);
-        $user->phone()->save($phone);
-
-        $email = Email::factory()->create([
-            'email' => 'superadmin@example.com',
-        ]);
-        $user->email()->save($email);
+        $user->assignRole($role3);
     }
 }
