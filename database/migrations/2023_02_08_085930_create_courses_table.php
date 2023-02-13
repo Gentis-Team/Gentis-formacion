@@ -17,15 +17,15 @@ return new class extends Migration
             $table->id();
             $table->string('code');
             $table->string('name');
-            $table->string('image');
-            $table->integer('duration_theory');
-            $table->integer('duration_practice');
-            $table->date('start_date');
-            $table->time('start_time');
-            $table->time('end_time');
+            $table->string('image')->nullable();
+            $table->integer('duration_theory')->nullable();
+            $table->integer('duration_practice')->nullable();
+            $table->date('start_date')->nullable();
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
             $table->text('description');
-            $table->string('modality');
-            $table->string('info_file');
+            $table->string('modality')->nullable();
+            $table->string('info_file')->nullable();
             $table->unsignedBiginteger('center_id')->nullable();
             $table->timestamps();
 
