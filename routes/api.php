@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\CourseController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\RequirementsController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -25,7 +26,10 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('register', 'register');
     Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
+});
 
+Route::controller(UserController::class)->group(function () {
+    Route::get('users/me', 'me');
 });
 
 Route::apiResource('courses', CourseController::class );
