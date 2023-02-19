@@ -26,22 +26,22 @@ class RequirementsSeeder extends Seeder
         ]);
         
         Requirement::factory()->create([
-            'name' => 'Certificat de professionalitat',
+            'name' => 'Certificat de professionalitat Nivell 1',
             'description' => 'De nivell 1',
         ]);
 
         Requirement::factory()->create([
-            'name' => 'Certificat de professionalitat',
+            'name' => 'Certificat de professionalitat Nivell 2',
             'description' => 'De nivell 2',
         ]);
 
         Requirement::factory()->create([
-            'name' => 'Cicles formatius',
+            'name' => 'Cicles formatiu Grau Mitja',
             'description' => 'Haver superat la prova d’accés als cicles formatius de grau mitjà',
         ]);
 
         Requirement::factory()->create([
-            'name' => 'Cicles formatius',
+            'name' => 'Cicles formatiu Grau Superior',
             'description' => 'Haver superat la prova d’accés als cicles formatius de grau superior',
         ]);
 

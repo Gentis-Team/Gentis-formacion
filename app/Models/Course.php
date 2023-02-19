@@ -40,18 +40,4 @@ class Course extends Model
     {
         return $this->belongsTo(Student::class, 'courses_students', 'course_id', 'student_id');
     }
-
-    public function fetchFromDB($title)
-    {
-        $start_time = now();
-        $courses = Course::where('title', 'like', "%{$title}%")->get();
-        $finish_time = now();
-
-        return response()->json([
-            'data' => [
-                'courses' => $courses,
-                'duration_in_milliseconds' => $finish_time->diffInMilliseconds($start_time)
-            ],
-        ]);
-    }
 }
