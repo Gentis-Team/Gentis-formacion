@@ -26,21 +26,8 @@ class CourseController extends Controller
             'status' => true,
             'courses' => $courses,
         ]);
-
-        /* $validatedData = $request->validate([
-            'title' => ['required'],
-            'fetchCached' => ['boolean'],
-        ]);
-
-        $fetchCached = $validatedData['fetchCached'];
-        $title = $validatedData['title'];
-
-        if ($fetchCached) {
-            return $this->fetchFromCache($title);
-        } else {
-            return $this->fetchFromDB($title);
-        } */
     }
+
 
     /**
      * Store a newly created resource in storage.

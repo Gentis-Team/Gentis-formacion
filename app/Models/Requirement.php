@@ -9,6 +9,8 @@ class Requirement extends Model
 {
     use HasFactory;
     
+    protected $guarded = [];
+    
     public function courses()
     {
         return $this->belongsToMany(Course::class, 'courses_requirements', 'requirement_id','course_id');    

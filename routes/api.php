@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\Api\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CourseController;
+use App\Http\Controllers\Api\GroupController;
+use App\Http\Controllers\Api\LocationController;
+use App\Http\Controllers\Api\RequirementController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 
 
@@ -31,6 +34,9 @@ Route::controller(UserController::class)->group(function () {
 });
 
 Route::apiResource('courses', CourseController::class );
+Route::apiResource('locations', LocationController::class );
+Route::apiResource('categories', CategoryController::class );
+Route::apiResource('requirements', RequirementController::class );
+Route::apiResource('groups', GroupController::class );
 
-Route::apiResource('students', StudentController::class );
 
