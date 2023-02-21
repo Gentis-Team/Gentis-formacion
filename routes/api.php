@@ -33,7 +33,9 @@ Route::controller(UserController::class)->group(function () {
     Route::get('users/me', 'me');
 });
 
+Route::post('courses/filter', [CourseController::class, 'filter']);
 Route::apiResource('courses', CourseController::class );
+
 Route::apiResource('locations', LocationController::class );
 Route::apiResource('categories', CategoryController::class );
 Route::apiResource('requirements', RequirementController::class );

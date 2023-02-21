@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FilterCourseRequest;
 use App\Http\Requests\StoreCourseRequest;
 use App\Models\Course;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ class CourseController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['index', 'show']]);
+        $this->middleware('auth:api', ['except' => ['index', 'show', 'filter']]);
     }
     /**
      * Display a listing of the resource.
@@ -25,6 +26,22 @@ class CourseController extends Controller
         return response()->json([
             'status' => true,
             'courses' => $courses,
+        ]);
+    }
+
+    /**
+     * Display a filtered listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function filter(Request $request)
+    {
+        $courses = Course::with(['categories', 'groups', 'requirements', 'center'])->get();
+
+        return response()->json([
+            'status' => true,
+            'courses' => $courses,
+            'filters' => $request->all(),
         ]);
     }
 

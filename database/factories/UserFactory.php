@@ -20,6 +20,7 @@ class UserFactory extends Factory
         return [
             'name' => fake()->name(),
             'email_verified_at' => now(),
+            'email' => fake()->email(),
             'password' => bcrypt('factoria'), // password
             'remember_token' => Str::random(10),
         ];
