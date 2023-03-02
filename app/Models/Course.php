@@ -40,4 +40,9 @@ class Course extends Model
     {
         return $this->belongsTo(Student::class, 'courses_students', 'course_id', 'student_id');
     }
+
+    public function entities()
+    {
+        return $this->belongsToMany(Entity::class, 'course_entity');
+    }
 }
