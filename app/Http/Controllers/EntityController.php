@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class EntityController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['index', 'show']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +19,12 @@ class EntityController extends Controller
      */
     public function index()
     {
-        //
+        $entities = Entity::get();
+
+        return response()->json([
+            'status' => true,
+            'entities' => $entities,
+        ]);
     }
 
     /**
