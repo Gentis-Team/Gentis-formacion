@@ -97,7 +97,7 @@ class CourseController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => "Course Created successfully!",
+            'message' => "Curs creat correctament!",
             'course' => $course
         ], 200);
     }
@@ -115,7 +115,7 @@ class CourseController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => "Course Updated successfully!",
+            'message' => "Curs editat correctament!",
             'course' => $course
         ], 200);
     }
@@ -132,7 +132,7 @@ class CourseController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => "Course Deleted successfully!",
+            'message' => "Curs eliminat correctament!",
         ], 200);
     }
 }

@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Facades\Cookie;
 use Spatie\Permission\Models\Role;
 
 class AuthController extends Controller
@@ -27,7 +28,7 @@ class AuthController extends Controller
         if (!$token) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Unauthorized',
+                'message' => 'Sense autorització',
             ], 401);
         }
         
@@ -64,7 +65,7 @@ class AuthController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => 'User created successfully',
+            'message' => 'Administrador creat correctament',
             'user' => $user,
         ]);
     }
@@ -74,7 +75,7 @@ class AuthController extends Controller
         Auth::logout();
         return response()->json([
             'status' => 'success',
-            'message' => 'Successfully logged out',
+            'message' => 'Sessio tancada correctament',
         ])->withCookie(cookie('logged_in', false, 60, null, null, false, false));
     }
 

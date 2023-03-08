@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Models\Student;
 use App\Http\Controllers\Controller;
@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,10 +19,14 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = Student::all();
+        $students = Student::all();
 
-        return $student;
+        return response()->json([
+            'status' => true,
+            'student' => $students
+        ], 200);
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -32,7 +40,7 @@ class StudentController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => "Student Created successfully!",
+            'message' => "T'has apuntat al curs correctament!",
             'student' => $student
         ], 200);
     }

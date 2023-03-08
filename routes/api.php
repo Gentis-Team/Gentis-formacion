@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\CourseController;
 use App\Http\Controllers\Api\GroupController;
 use App\Http\Controllers\Api\LocationController;
 use App\Http\Controllers\Api\RequirementController;
+use App\Http\Controllers\Api\StudentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 
@@ -42,5 +43,7 @@ Route::apiResource('centers', CenterController::class );
 Route::apiResource('categories', CategoryController::class );
 Route::apiResource('requirements', RequirementController::class );
 Route::apiResource('groups', GroupController::class );
+Route::apiResource('students', StudentController::class );
+
 
 
