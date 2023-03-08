@@ -5,8 +5,12 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FilterCourseRequest;
 use App\Http\Requests\StoreCourseRequest;
+use App\Models\Center;
 use App\Models\Course;
+use App\Models\Location;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
@@ -21,11 +25,27 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::with(['categories', 'groups', 'requirements', 'center'])->get();
+        $courses = Course::with(['categories', 'groups', 'requirements', 'center', 'users'])->get();
 
         return response()->json([
             'status' => true,
             'courses' => $courses,
+        ]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $course = Course::with(['categories', 'groups', 'requirements', 'center', 'users'])->find($id);
+
+        return response()->json([
+            'status' => true,
+            'course' => $course,
         ]);
     }
 
@@ -54,7 +74,26 @@ class CourseController extends Controller
      */
     public function store(StoreCourseRequest $request)
     {
-        $course = Course::create($request->all());
+        $course = Course::create([
+            'code' => $request->code,
+            'name' => $request->name,
+            'duration_theory' => $request->duration_theory,
+            'duration_practice' => $request->duration_practice,
+            'description' => $request->description,
+        ]
+    );
+
+        $course->categories()->attach([
+            $request->categories
+        ]);
+        $location = Location::find($request->location);
+        $center = Center::where('location_id', $location->id)->first();
+        $center->courses()->save($course);
+        $user_id = Auth::user()->id;
+        $user = User::find($user_id);
+        $user->courses()->attach([
+            $course->id
+        ]);
 
         return response()->json([
             'status' => true,
