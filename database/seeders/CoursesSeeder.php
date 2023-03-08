@@ -26,6 +26,9 @@ class CoursesSeeder extends Seeder
         $course->categories()->attach([
             1, 3
         ]);
+        $course->users()->attach([
+            2
+        ]);
 
         $course = Course::factory()->create([
             'code' => 'AFDDGD0208',
@@ -47,6 +50,9 @@ class CoursesSeeder extends Seeder
             1, 3, 5, 7, 8
         ]);
         $course->groups()->attach([
+            2
+        ]);
+        $course->users()->attach([
             2
         ]);
 
@@ -72,6 +78,9 @@ class CoursesSeeder extends Seeder
         $course->groups()->attach([
             1
         ]);
+        $course->users()->attach([
+            2
+        ]);
 
         $course = Course::factory()->create([
             'code' => 'COML0309',
@@ -95,6 +104,9 @@ class CoursesSeeder extends Seeder
         $course->groups()->attach([
             2
         ]);
+        $course->users()->attach([
+            1
+        ]);
 
         $course = Course::factory()->create([
             'code' => 'HOTR0208',
@@ -114,6 +126,9 @@ class CoursesSeeder extends Seeder
         ]);
         $course->groups()->attach([
             3
+        ]);
+        $course->users()->attach([
+            1
         ]);
     }
 }

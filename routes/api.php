@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\CenterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CourseController;
@@ -37,6 +38,7 @@ Route::post('courses/filter', [CourseController::class, 'filter']);
 Route::apiResource('courses', CourseController::class );
 
 Route::apiResource('locations', LocationController::class );
+Route::apiResource('centers', CenterController::class );
 Route::apiResource('categories', CategoryController::class );
 Route::apiResource('requirements', RequirementController::class );
 Route::apiResource('groups', GroupController::class );
