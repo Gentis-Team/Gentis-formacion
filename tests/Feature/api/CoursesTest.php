@@ -44,7 +44,11 @@ class CoursesTest extends TestCase
         $response = $this->postJson('/api/courses', [
             "code" => "AD738908_RT",
             'name' => 'newCourse',
+            'duration_theory' => 200,
+            'duration_practice' => 200,
             'description' => 'newCourseDescription',
+            'categories' => 1,
+            'location' => 1,
         ]);
 
         $this->assertDatabaseHas('courses', [
