@@ -1,66 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <a href="" rel="noopener">
+ <img width=400px height=200px src="https://simplonline.co/_next/image?url=https%3A%2F%2Fsimplonline-v3-prod.s3.eu-west-3.amazonaws.com%2Fmedia%2Fimage%2Fpng%2F848ae791-7122-4229-9ff9-fdc209c6cd09.png&w=1280&q=75" alt="Project logo"></a>
 </p>
 
-## About Laravel
+<h3 align="center">Ecommerce Gentis</h3>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<div align="center">
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+[![Status](https://img.shields.io/badge/status-development-yellow.svg)]()
+[![GitHub Issues](https://img.shields.io/github/issues/adriansunye/portfolio-client.svg)](https://github.com/adriansunye/ecommerce-gentis-client/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/adriansunye/ecommerce-gentis-client.svg)](https://github.com/adriansunye/ecommerce-gentis-client/pulls)
+[![License](https://img.shields.io/badge/license-Gentis-blue.svg)](/LICENSE)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+</div>
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<p align="center"> Web desenvolupada per al tractament dels cursos oferits per Gentis
+    <br> 
+</p>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 📝 Table of Contents
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- [📝 Table of Contents](#-table-of-contents)
+- [🧐 About ](#-about-)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Versions](#versions)
+- [✍️ Authors ](#️-authors-)
+- [FAQs](#faqs)
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 🧐 About <a name = "about"></a>
 
-### Premium Partners
+La fundación Gentis tiene como objetivos ayudar a las personas en situación de desempleo a llegar a la acción formativa (cursos) que desean y necesitan, más rápido y sin más complejidad innecesaria y así mejorar su ocupabilidad. Por otro lado, yudar al equipo de formaciñón en la tarea de capacitación y selección de alumnado para todos los cursos de formación ocupacional que tienen diseminados por diferentes puntos territoriales de Cataluña.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+***
 
-## Contributing
+## Technologies
+The project was developed with the following technologies
+git add .
+* PHP
+* Laravel 9
+* PhpMyAdmin
+* Node Js
+* Npm
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+***
 
-## Code of Conduct
+## Installation
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1- Install PHP and Composer on your computer. You can find instructions for this on the [PHP website](https://www.php.net/)
 
-## Security Vulnerabilities
+2- Clone the app's repository from GitHub on this [link](https://github.com/Gentis-Team/Gentis-formacion-server.git)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3- Install the app's dependencies using Composer: <br/>
+`composer install`
 
-## License
+4- Create a new file named .env and enter your credentials<br/>
+`cp .env.example .env`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5- Install the app's JavaScript dependencies using npm:<br/>
+`npm install`
+
+6- Create the database using a relational database<br/>
+
+7- Run the migrations to create the tables, factories, controllers, models & seeders:<br/>
+´php artisan make:model nameOfTable -m -f --api´ & ´php artisan make:seeder nameOfTable´
+
+8- Run the migrations to create the tables and relationships, and populate the data with the seeders:<br/>
+´php artisan migrate:fresh --seed´
+
+9- Run the app using PHP:<br/>
+`php artisan serve`
+
+10- Install prettier test:<br/>
+´composer require sempro/phpunit-pretty-print --dev´
+
+11- Run test:<br/>
+You can specify the printer to use on the phpunit command line:
+
+For PhpUnit < 9, use the following:
+´php vendor/bin/phpunit --printer 'Sempro\PHPUnitPrettyPrinter\PrettyPrinter' tests/´
+
+For PhpUnit >= 9, use the following:
+´php vendor/bin/phpunit --printer 'Sempro\PHPUnitPrettyPrinter\PrettyPrinterForPhpUnit9' tests/´
+
+***
+
+## Versions
+
+PHP 8.0.2<br>
+laravel/framework: 9.19
+
+***
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@LidiaLG](https://github.com/LidiaLG)
+- [@IngridB-afk](https://github.com/IngridB-afk)
+- [@camilorocca](https://github.com/camilorocca)
+- [@ecp12](https://github.com/ecp12)
+- [@adriansunye](https://github.com/adriansunye)
+
+***
+## FAQs
+
+We'll fill this field when you ask something
+
+
